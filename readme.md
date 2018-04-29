@@ -1,6 +1,11 @@
-#REST (Representational State Transfer)
-#RESTful Routing
-#CRUD (Create, Read, Update, Delete)
+# Yelp Campground
+# A website for campgrounds
+# Built on the MEAN stack
+# REST (Representational State Transfer)
+# Follows RESTful Routing
+# CRUD (Create, Read, Update, Delete)
+
+# Website link : https://happycamping.herokuapp.com/
 
 Name        URL                     Method  Description
 ===========================================================================

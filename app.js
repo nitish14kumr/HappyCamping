@@ -16,8 +16,10 @@ var Campground      = require("./models/campground"),
 var campgroundRoutes    = require("./routes/campgrounds"),
     commentRoutes       = require("./routes/comments"),
     indexRoutes         = require("./routes/index");
-    
-mongoose.connect(process.env.DATABASEURL);
+
+console.log(process.env);
+var dburl = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";    
+mongoose.connect(dburl);
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
