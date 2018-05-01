@@ -10,3 +10,12 @@
     display: inline;
     margin-left: 4px;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+#register-lastname {
+    padding-left: 0;
+}

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var methodOverride  = require("method-override"),
     LocalStrategy   = require("passport-local"),
     bodyParser      = require("body-parser"),
@@ -17,9 +19,9 @@ var campgroundRoutes    = require("./routes/campgrounds"),
     commentRoutes       = require("./routes/comments"),
     indexRoutes         = require("./routes/index");
 
-console.log(process.env);
-var dburl = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";    
-mongoose.connect(dburl);
+// console.log(process.env);
+// var dburl = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";  
+mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));

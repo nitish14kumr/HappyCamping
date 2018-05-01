@@ -16,21 +16,26 @@ router.get("/", (req, res)=>{
 // ================== REGISTER ROUTES ======================
 
 router.get("/register", (req, res)=>{
-    res.render("register");
+    res.render("register", {page: "register"});
 });
 
 router.post("/register", (req, res)=>{
-    User.register(
-        new User({username: req.body.username}),
-        req.body.password,
-        (err, user)=>{
+    var newUser = new User({
+        username: req.body.username,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email
+    });
+    // console.log(newUser);
+    
+    User.register(newUser, req.body.password, (err, user)=>{
             if(err){
                 req.flash("error", err.message);
                 // console.log(err);
                 return res.redirect("/register");
             }
             passport.authenticate("local")(req, res, ()=>{
-                req.flash("success", "Welcome to Yelp Camp " + user.username.replace(/\b\w/g, l => l.toUpperCase()));
+                req.flash("success", "Welcome to Yelp Camp " + user.firstname.replace(/\b\w/g, l => l.toUpperCase()) + ". Glad to have you here!");
                 res.redirect("/campgrounds");
             });
         }
@@ -40,7 +45,7 @@ router.post("/register", (req, res)=>{
 // ==================== LOGIN ROUTES ======================
 
 router.get("/login", (req, res)=>{
-    res.render("login");
+    res.render("login", {page: "login"});
 });
 
 router.post("/login", passport.authenticate("local",

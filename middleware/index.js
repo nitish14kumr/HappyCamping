@@ -55,7 +55,7 @@ module.exports = {
         function (req, res, next){
             if(req.isAuthenticated())
                 return next();
-            req.flash("error", "You should be logging in to de that.");
+            req.flash("error", "You should be logged in to do that.");
             res.redirect("/login");
         }
 }
