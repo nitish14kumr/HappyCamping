@@ -3,16 +3,16 @@
 <div class="container">
     <div class="row">
         <div style="width:40%; margin:35px auto;">
-            <h1 style="text-align:center;">Login!</h1>
-            <form action="/login" method="POST">
+            <h1 style="text-align:center;">Reset Password</h1>
+            <form action="/reset/<%= token %>" method="POST">
                 <div class="form-group">
-                    <input type="text" name="username" autofocus class="form-control" placeholder="Enter Username">
+                    <input type="password" name="password" autofocus class="form-control" placeholder="Enter Password">
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                    <input type="password" name="cnfpassword" autofocus class="form-control" placeholder="Confirm Password">
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Login" class="btn btn-success btn-lg btn-block">
+                    <input type="submit" value="Change Password" class="btn btn-success btn-lg btn-block">
                 </div>
                 <span class="pull-right"><a href="/forgot">Forgot Password?</a></span>
             </form>

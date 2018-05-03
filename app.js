@@ -17,6 +17,7 @@ var Campground      = require("./models/campground"),
     
 var campgroundRoutes    = require("./routes/campgrounds"),
     commentRoutes       = require("./routes/comments"),
+    resetRoutes         = require("./routes/reset"),
     indexRoutes         = require("./routes/index");
 
 // console.log(process.env);
@@ -55,6 +56,7 @@ app.use(function(req, res, next){
 
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
+app.use(resetRoutes);
 app.use(indexRoutes);
 
 
