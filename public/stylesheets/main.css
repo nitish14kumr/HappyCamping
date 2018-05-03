@@ -19,3 +19,11 @@
 #register-lastname {
     padding-left: 0;
 }
+
+#search-btn {
+    padding: 9px 9px 4px 9px;
+}
+
+.input-group {
+    margin: 0px 12px 0px 12px;
+}
