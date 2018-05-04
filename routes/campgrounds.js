@@ -24,8 +24,9 @@ router.get("/", (req, res)=>{
                 req.flash("error", "Something went wrong!!");
                 return res.redirect("/");
             }
-            if(!campgrounds){
+            if(campgrounds.length < 1){
                 req.flash("error", "No Campgrounds matching the search term found.");
+                return res.redirect("back");
             }
             res.render("campgrounds/index", {campgrounds: campgrounds, page: "campgrounds"});
         });
