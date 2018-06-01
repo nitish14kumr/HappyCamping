@@ -1,4 +1,4 @@
-# Yelp Campground
+# Happy Camping
 => A website for campgrounds  
 => Built on the MEAN stack  
 => REST (Representational State Transfer)  
